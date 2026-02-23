@@ -603,6 +603,8 @@ require('lazy').setup({
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
+        ['python-lsp-server'] = {},
+        ['terraform-ls'] = {},
       }
 
       -- Ensure the servers and tools above are installed
@@ -691,6 +693,7 @@ require('lazy').setup({
         lua = { 'stylua' },
         json = { 'prettier' },
         markdown = { 'prettier' },
+        terraform = { 'terraform_fmt' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
@@ -857,7 +860,8 @@ require('lazy').setup({
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     config = function()
-      local filetypes = { 'bash', 'c', 'diff', 'hcl', 'html', 'json', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'python', 'query', 'vim', 'vimdoc' }
+      local filetypes =
+        { 'bash', 'c', 'diff', 'hcl', 'html', 'json', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'python', 'query', 'terraform', 'vim', 'vimdoc' }
       require('nvim-treesitter').install(filetypes)
       vim.api.nvim_create_autocmd('FileType', {
         pattern = filetypes,
