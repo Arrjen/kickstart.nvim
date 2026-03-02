@@ -662,6 +662,7 @@ require('lazy').setup({
         'prettier', -- Used to format JSON, Markdown and more..
         'terraform-ls',
         'python-lsp-server',
+        'markdownlint',
         -- You can add other tools here that you want Mason to install
       })
 
